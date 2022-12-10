@@ -1,11 +1,11 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-const login = () => {
+const BankDetails = () => {
     const { id } = useParams()
     return (
-    <div>login</div>
+    <div>BankDetails</div>
   )
 }
 
-export default login
+export default BankDetails

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import Bank from '../../components/Bank'
 import { useStoreControl } from '../../hooks/useStoreControl'
-
+import './banks.scss'
 const Banks = () => {
     const {banksList,getListBanks}:any=useStoreControl()
 
     useEffect(() => {
       getListBanks()
-    
+        
       
     }, [])
     

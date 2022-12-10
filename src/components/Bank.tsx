@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Bank = ({bank}:any) => {
-  
+  const navigate=useNavigate()
   
   const HandleBank=()=>{
-    console.log('hola , Le han dado click a un banco')
+   
+  navigate('/login')
   }
     return (
     <div className='bankImage' onClick={HandleBank}>

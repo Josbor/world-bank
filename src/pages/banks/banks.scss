@@ -2,6 +2,7 @@
 .bankImage {
     width: 8rem;
     height: 4rem;
+    border: solid;
     &:hover {
       cursor: pointer;
       background-color: rgba(114, 245, 169, 0.329);
