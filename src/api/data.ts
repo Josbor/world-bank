@@ -14,8 +14,8 @@ export const getInstitutions = async () => {
   const response = await url.get<any>("/api/institutions/", {
     auth: credentials,
   });
-  const data = await response.data;
-  console.log(data.results);
+  const data = await response.data.results;
+ 
   return data;
 };
 
