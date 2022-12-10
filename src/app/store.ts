@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import usersReducer from '../features/usersSlice'
 import bankSelectionReducer from '../features/bankSelectionSlice'
 
 export const store = configureStore({
   reducer: {
-    users:usersReducer,
+    
     bankSelection:bankSelectionReducer
   },
 })
