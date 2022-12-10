@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Bank from '../components/Bank'
-import { useStoreControl } from '../hooks/useStoreControl'
+import Bank from '../../components/Bank'
+import { useStoreControl } from '../../hooks/useStoreControl'
 
 const Banks = () => {
     const {banksList,getListBanks}:any=useStoreControl()
