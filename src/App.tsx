@@ -1,14 +1,27 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import {  getAccounts, getInstitutions } from './api/data'
+import { getAccounts, getInstitutions, generateLink, getTransaccions, destroyLink, getAllLinks } from './api/data';
 
 function App() {
   const [count, setCount] = useState(0)
   useEffect(()=>{
     getInstitutions()
-    getAccounts()
+     
+    
+    
+    
+    //generateLink('erebor_mx_retail','bnk100','full') its work !
   },[])
+
+  const clearLinks= async()=>{
+      destroyLink("9ef7bb0f-416b-4380-a7b7-52a1ede0c88f")
+    // if (links.length>0) await links.forEach( (element:any) => {
+    // destroyLink(element.id)
+    // });
+    //.then(e=>e.forEach((e:any)=>destroyLink(e.id)))
+   
+  }
 
   return (
     <div className="App">
@@ -22,7 +35,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={clearLinks}>
           count is {count}
         </button>
         <p>
