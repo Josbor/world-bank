@@ -72,7 +72,7 @@ export const getAllLinks = async (
       `/api/links/`,
       { auth: credentials }
     );
-    const result = await response.data;
+    const result = await response.data.results;
     console.log(result);
     return result;
   };

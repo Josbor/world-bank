@@ -3,26 +3,31 @@ import { useState } from "react"
 
 import { RootState } from "../app/store"
 //import { addSelectedUser } from '../features/bankSelectionSlice';
-import { addUsers } from "../features/usersSlice"
 //import { User } from "../models/users.model"
-import { getInstitutions } from '../api/data';
+import { getInstitutions, getAllLinks } from '../api/data';
 
 
 export const useStoreControl = () => {
     const [banksList,setBanksList]=useState<any>([])
-    //const dispatch=useDispatch()
-    //const userList=useSelector((state:RootState)=>state.users.value)
-   // const selectedUser=useSelector((state:RootState)=>state.selectedUser.value)
+    const [linksList,setLinkList]=useState<any>([])
   
       const getListBanks = async () => {
       const listBanks=await getInstitutions();
       setBanksList(listBanks)
       console.log(banksList)
       }
+
+     const getLinks= async  () => {
+        const links= await getAllLinks()
+        setBanksList(links)
+        
+     }
    
     return {
         banksList,
-        getListBanks
+        getListBanks,
+        linksList,
+        getLinks
         
     }
 

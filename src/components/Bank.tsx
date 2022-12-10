@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Bank = ({bank}:any) => {
+  const [path,SetPah]=useState<string>('/login')
   const navigate=useNavigate()
   
-  const HandleBank=()=>{
-   
-  navigate('/login')
-  }
+
     return (
-    <div className='bankImage' onClick={HandleBank}>
+    <Link to={path}>
+    
+    <div className='bankImage'>
         <img src={bank.text_logo} alt="" />
     </div>
+    </Link>
   )
 }
 
