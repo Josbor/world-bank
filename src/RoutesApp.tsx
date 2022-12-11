@@ -9,17 +9,15 @@ import MyBanks from './pages/myBanks/MyBanks';
 
 const RoutesApp = () => {
   return (
-    <BrowserRouter>
+    
       <Routes>
           <Route path='/' element={<MyBanks/>}/>
           <Route path='/login/:id' element={<Login/>}/>
           <Route path='/bankDetails/:id' element={<BankDetails/>}/>
           <Route path='/banks' element={<Banks/>}/>
           <Route path='*' element={ <ErrorPage />}/>
-         
-       
       </Routes>
-    </BrowserRouter>
+
   )
 }
 

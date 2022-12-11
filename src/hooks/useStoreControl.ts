@@ -4,12 +4,13 @@ import { useState } from "react"
 import { RootState } from "../app/store"
 //import { addSelectedUser } from '../features/bankSelectionSlice';
 //import { User } from "../models/users.model"
-import { getInstitutions, getAllLinks } from '../api/data';
+import { getInstitutions, getAllLinks, getInstitutionsDetails } from '../api/data';
 
 
 export const useStoreControl = () => {
     const [banksList,setBanksList]=useState<any>([])
     const [linksList,setLinkList]=useState<any>([])
+    const [bankDetails,setBankDetails]=useState<any>({})
   
       const getListBanks = async () => {
       const listBanks=await getInstitutions();
@@ -19,16 +20,25 @@ export const useStoreControl = () => {
 
      const getLinks= async  () => {
         const links= await getAllLinks()
-        setBanksList(links)
+        setLinkList(links)
         
      }
+
+     const getBankDetails=async(id:number)=>{
+        const details=await getInstitutionsDetails(id);
+        
+        setBankDetails(details);
+     }
+
+    
    
     return {
         banksList,
         getListBanks,
         linksList,
-        getLinks
-        
+        getLinks,
+        bankDetails,
+        getBankDetails
     }
 
 }

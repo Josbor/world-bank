@@ -19,6 +19,18 @@ export const getInstitutions = async () => {
   return data;
 };
 
+//DETAILS FROM A INSTITUTION
+
+export const getInstitutionsDetails = async (id:number) => {
+  const response = await url.get<any>(`api/institutions/${id}/`, {
+    auth: credentials,
+  });
+  
+  const data = await response.data;
+ 
+  return data;
+};
+
 export const getAccounts = async (link:string) => {
   const response = await url.post<any>(
     "/api/accounts/",

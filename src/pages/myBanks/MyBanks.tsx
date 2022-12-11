@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Header from '../../components/Header';
 import { useStoreControl } from '../../hooks/useStoreControl';
 
 const MyBanks = () => {
@@ -11,9 +12,7 @@ const MyBanks = () => {
     
     return (
     <div>
-        <header>
-            <h3>My Banks</h3>
-        </header>
+        <Header header={{tittle:'Mis Bancos',help:"Ingrese se sus credenciales para ingresar al banco"}}/>
         <div className='banks-container'>
             {linksList.length>0?<p>hay links</p>:<p> no hay links</p>}
 

@@ -1,11 +1,36 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 100vw;
+  overflow: hidden;
+ 
+  
 }
 
+.header{
+  color:var(--color);
+  display:grid;
+  grid-template-columns:1fr 6fr 1fr;
+  border-bottom: solid 1px rgb(153, 153, 153);
+  background-color:#ffff;
+  box-shadow: 10px;
+  width:100%;
+  margin-bottom: 2rem;
+  .header-icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h2{
+    text-align: center;
+    margin: 1rem auto;
+    font-size: 1.3rem;
+  }
+  a{
+    text-decoration: none;
+    color:var(--color);
+   
 
+  }
+}
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }

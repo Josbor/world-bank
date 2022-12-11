@@ -1,3 +1,4 @@
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -5,7 +6,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+ 
   background-color: #242424;
 
   font-synthesis: none;
@@ -14,24 +15,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --background: rgba(255, 255, 255, 0.87);
-
-  --pokemonType: #2c2d32;
+  --background: rgba(232, 230, 235, 0.473);
   --main_size:500px;
-  --main_mobile_size: 500px;
-  --main_desktop_size: 1200px;
-  --color: #ffffff;
-  --breakpoint-medio: 500px;
+  --color: #494949;
+ 
 }
 
 body {
   background-color: var(--background);
-
-}
-
-.pokemonType {
-  background-color: var(--pokemonType);
-
+  
+  overflow:hidden;
 }
 
 .main_container {
@@ -47,23 +40,7 @@ body {
 
 
 
-.container_pokemons {
-  //width: 1200px;
 
-  margin: 0 auto;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-
-  @media screen and (max-width: 500px) {
-    width: 320px;
-    grid-template-columns: repeat(2, 1fr);
-
-    column-gap: 0.1rem;
-
-  }
-
-}
 
 a {
   font-weight: 500;
@@ -77,16 +54,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+ 
   min-width: 320px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 
 button {
   border-radius: 8px;
@@ -129,8 +102,6 @@ button {
   
 
 @media screen and  (min-width:500px) {
-  :root {
-    color: blue;
-    --background: black;
-  }
+ 
+  
 }
