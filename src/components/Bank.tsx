@@ -6,7 +6,6 @@ const Bank = ({bank}:any) => {
   const [path,SetPah]=useState<string>(`/login/${bank.id}`)
   const navigate=useNavigate()
   
-  console.log(bank)
   
     return (
     <Link to={path}>

@@ -15,8 +15,8 @@ export const getInstitutions = async () => {
     auth: credentials,
   });
   const data = await response.data.results;
- 
-  return data;
+  const filterData=data.filter((bank:any)=>bank.type=='bank'&&bank.text_logo) 
+  return filterData;
 };
 
 //DETAILS FROM A INSTITUTION

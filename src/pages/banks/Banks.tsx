@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react'
 import Bank from '../../components/Bank'
-import BanksContainers from '../../components/BanksContainers'
+import BanksContainers from '../../components/bankContainer/BanksContainer'
 import Header from '../../components/Header'
 import { useStoreControl } from '../../hooks/useStoreControl'
-import './banks.scss'
+import useLoading from '../../hooks/useLoading'
 
 const Banks = () => {
     const {banksList,getListBanks}:any=useStoreControl()
-
+    const {setOpen,Loading}=useLoading()
     useEffect(() => {
-      getListBanks()
+      setOpen(true)
+      getListBanks().then(()=> {setOpen(false)})
+      
         
       
     }, [])
@@ -18,8 +20,13 @@ const Banks = () => {
     <div>
       <Header header={{path:'/',tittle:'Seleccione un Banco',help:"Seleccione un banco para ingresar sus datos"}}/>
       <BanksContainers list={banksList}/>
+      <Loading/>
     </div>
   )
 }
 
 export default Banks
+function useloading() {
+  throw new Error('Function not implemented.')
+}
+
