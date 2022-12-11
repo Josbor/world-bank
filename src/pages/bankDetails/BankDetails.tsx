@@ -1,10 +1,13 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import Header from '../../components/Header'
 
 const BankDetails = () => {
     const { id } = useParams()
     return (
-    <div>BankDetails</div>
+    <div>
+      <Header />
+    </div>
   )
 }
 

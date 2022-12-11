@@ -37,8 +37,8 @@ export const useStoreControl = () => {
         const newArray= await links.filter((list:any)=>
                 banks.some((bank:any)=>list.institution==bank.name)
             ).map((links:any)=>{
-                const {text_logo,id,name}=banks.find((bk:any)=> links.institution==bk.name)
-                return {...links,bankDetails:{id,text_logo,name}}
+                const bank=banks.find((bk:any)=> links.institution==bk.name)
+                return {...links,bankDetails:{...bank,linkId:links.id}}
             })
         return newArray    
         
