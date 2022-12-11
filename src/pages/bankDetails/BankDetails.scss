@@ -1,0 +1,17 @@
+.header-account{
+    *{margin: 0;}
+    width:75vw;
+    height: 50px;
+    background:rgb(103, 103, 225);
+    margin:0 auto;
+    border-radius: 12px;
+    padding: 7px 10px;
+    box-shadow: 3px 3px 3px 3px rgb(209, 209, 209);
+    color: white;
+    p,h2{
+        margin-left: 20px;
+    }
+
+    h2{font-size: large;}
+    p{font-size: small;}
+}
