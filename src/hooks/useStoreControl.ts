@@ -11,8 +11,8 @@ export const useStoreControl = () => {
     const [banksList,setBanksList]=useState<any>([])
     const [linksList,setLinkList]=useState<any>([])
     const [bankDetails,setBankDetails]=useState<any>({})
-  
-      const getListBanks = async () => {
+      
+    const getListBanks = async () => {
       const listBanks=await getInstitutions();
       setBanksList(listBanks)
       console.log(banksList)
@@ -30,6 +30,20 @@ export const useStoreControl = () => {
         setBankDetails(details);
      }
 
+     const getLinksBanks=async()=>{
+
+        const links= await getAllLinks();
+        const banks= await getInstitutions();
+        const newArray= await links.filter((list:any)=>
+                banks.some((bank:any)=>list.institution==bank.name)
+            ).map((links:any)=>{
+                const {text_logo,id,name}=banks.find((bk:any)=> links.institution==bk.name)
+                return {...links,bankDetails:{id,text_logo,name}}
+            })
+        return newArray    
+        
+     }
+
     
    
     return {
@@ -38,7 +52,8 @@ export const useStoreControl = () => {
         linksList,
         getLinks,
         bankDetails,
-        getBankDetails
+        getBankDetails,
+        getLinksBanks
     }
 
 }
