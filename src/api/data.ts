@@ -31,19 +31,7 @@ export const getInstitutionsDetails = async (id:number) => {
   return data;
 };
 
-export const getAccounts = async (link:string) => {
-  const response = await url.post<any>(
-    "/api/accounts/",
-    {
-      link,
-      save_data: true,
-    },
-    { auth: credentials }
-  );
-  const result = await response.data;
-  console.log(result);
-  return result;
-};
+
 
 // GENERA UN LINK
 export const generateLink = async (
@@ -104,3 +92,48 @@ export const getTransaccions = async (link:string,date_from:string,date_to:strin
   console.log(result);
   return result;
 };
+
+
+// ACCOUNTS 
+export const getAccounts = async (link:string) => {
+  const response = await url.post<any>(
+    "/api/accounts/",
+    {
+      link,
+      save_data: true,
+    },
+    { auth: credentials }
+  );
+  const result = await response.data;
+ 
+  return result;
+};
+
+//OWNERS
+
+export const getOwners = async (link:string) => {
+  const response = await url.post<any>(
+    "/api/owners/",
+    {
+      link,
+      save_data: true,
+    },
+    { auth: credentials }
+  );
+  const result = await response.data;
+
+  return result;
+};
+
+export const getLinkDetails = async (link:string) => {
+    const response = await url.get<any>(
+      `/api/links/${link}`,
+      { auth: credentials }
+    );
+    const result = await response.data;
+    console.log(result);
+    return result;
+  };
+
+
+

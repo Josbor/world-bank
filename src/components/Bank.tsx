@@ -4,7 +4,7 @@ import useEffect from 'react';
 
 const Bank = ({bank}:any) => {
   const {country_code,id,linkId,text_logo}=bank
-  const path=linkId?`/BankDetails/${linkId}`:`/login/${id}`
+  const path=linkId?`/BankDetails/${linkId}/${id}`:`/login/${id}`
   const contrycode=country_code?country_code.toLowerCase():'';
   
   const country=`https://flagcdn.com/${contrycode}.svg`

@@ -4,16 +4,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Account.scss'
 
-const Account = () => {
+const Account = ({account}:any) => {
+  const {name,balance,currency,category,bank_product_id}=account
   return (
     <div className='account'>
       <div className='type-account'>
-        <h3>Cuenta Corriente</h3>
-        <p>xxxxxxxxxxx3582</p>
+        <h3>{category.replace("_"," ")}</h3>
+        <p>xxxxx{bank_product_id.slice((bank_product_id.length-4),bank_product_id.length)}</p>
       </div>
       <div className='account-balance'>
         <p>SALDO ACTUAL</p>
-        <h3>$100</h3>
+        <h3>{currency}. {balance.current}</h3>
       </div>
       <div className='account-footer'>
 
