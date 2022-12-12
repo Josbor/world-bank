@@ -1,0 +1,27 @@
+{
+    "background_color":"#ffffff",
+    "categories":["finance","business"],
+    "description":"Aplicacion para consultar informacion del banco",
+    "dir":"ltr",
+    "display_override": ["standalone", "fullscreen"],
+    "display":"standalone",
+    "icons": [
+      {
+        "src": "assets/react.svg",
+        "sizes": "any",
+        "purpose":"any"
+      }
+    
+   
+    ],
+    "lang":"es-MX",
+    "name":"PWA WORLD CASH",
+    "orientation":"portrait", 
+    "prefer_related_applications":false,
+    "scope": "/",
+    "short_name": "PWA WORLD CASH",
+    "start_url": "/",
+    "theme_color": "#6767e1"
+
+
+}
