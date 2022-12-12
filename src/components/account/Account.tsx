@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import './Account.scss'
 
 const Account = ({account}:any) => {
-  const {name,balance,currency,category,bank_product_id}=account
+  const {name,balance,currency,category,bank_product_id,id,link}=account
   return (
     <div className='account'>
       <div className='type-account'>
@@ -18,7 +18,7 @@ const Account = ({account}:any) => {
       </div>
       <div className='account-footer'>
 
-        <Link to='/'>
+        <Link to={`/transactions/${link}/${id}`}>
           <p>
             VER MOVIMIENTOS
           </p>

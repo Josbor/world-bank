@@ -26,9 +26,11 @@ const BankDetails = () => {
     return (
     <div>
       <Header header={{path:'/',tittle:'Cuentas',help:"elija una cuenta para ver sus transacciones"}}/>
-          <BankLogo img={accountInfo.bank?accountInfo.bank.text_logo:''}/>
-          <HeaderAccount owners={accountInfo.owners}/>
-          <AccountContainer list={accountInfo.accounts?accountInfo.accounts:[]}/>
+        <div className='main-container-account'>
+          <BankLogo img={accountInfo.bank ? accountInfo.bank.text_logo : ''} />
+          <HeaderAccount owners={accountInfo.owners} />
+          <AccountContainer list={accountInfo.accounts ? accountInfo.accounts : []} />
+        </div>
       <Loading/>
     </div>
   )

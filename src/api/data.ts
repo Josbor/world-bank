@@ -77,13 +77,14 @@ export const getAllLinks = async (
     return result;
   };
 
-export const getTransaccions = async (link:string,date_from:string,date_to:string) => {
+export const getTransaccions = async (link:string,date_from:string,date_to:string,account:string) => {
   const response = await url.post<any>(
     "/api/transactions/",
     {
+      link,
       date_from,
       date_to,
-      link,
+      account,
       save_data: true,
     }, 
     { auth: credentials }
