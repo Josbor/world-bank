@@ -14,7 +14,7 @@ export default defineConfig({
     srcDir: "src",
     filename: "sw.ts",
     includeAssets: ["/favicon.png"],
-    strategies: "injectManifest",
+    strategies: "generateSW",
     manifest: {
       name: "PWA WORLD CASH",
       short_name: "WC",
