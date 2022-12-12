@@ -10,6 +10,7 @@ import { Box, fontSize } from '@mui/system';
 import { Paper } from '@mui/material';
 import './Transactions.scss'
 import useDatePicker from '../../hooks/useDatePicker';
+import useLoading from '../../hooks/useLoading';
 
 const Transactions = () => {
   const [transactions, setTransactions] = useState([])
@@ -18,8 +19,34 @@ const Transactions = () => {
   const { link, idAccount } = useParams()
   console.log({ link, idAccount })
   const { getListTransaccions } = useStoreControl()
-  const [dateFromState, DateFromPicker] = useDatePicker('Desde')
-  const [dateToState, DateToPicker] = useDatePicker('Hasta')
+  const [dateFromState,dateToState, DateFromPicker] = useDatePicker('Desde','Hasta')
+  const {Loading,setOpen}=useLoading()
+  
+  const today = new Date();
+  const  formatToday= today.toISOString().slice(0,10);
+
+console.log(formatToday); 
+  useEffect(() => {
+    if (link && idAccount){
+      if (dateFromState){
+          if(dateToState) {
+            setOpen(true);
+            getListTransaccions(link, dateFromState, dateToState, idAccount).then((data =>{
+              
+              setTransactions(data)
+              setOpen(false);
+            }))
+          }
+         
+      }
+  
+    }
+  
+    
+  }, [dateFromState,dateToState])
+  
+
+
   useEffect(() => {
     if (link && idAccount) {
       getListTransaccions(link, '2022-12-01', '2022-12-11', idAccount).then((data => setTransactions(data)))
@@ -66,9 +93,9 @@ const Transactions = () => {
       </Box>
       <Box component={Paper} sx={{...BoxStyle,paddingTop:1,paddingBottom:1}}>
         <DateFromPicker />
-        <DateToPicker/>
       </Box>
       <TransactionTable transactions={transactions || []} />
+      <Loading/>
     </>
   )
 }
