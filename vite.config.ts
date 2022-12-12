@@ -14,7 +14,7 @@ export default defineConfig({
     srcDir: "src",
     filename: "sw.ts",
     includeAssets: ["/favicon.png"],
-    strategies: "generateSW",
+    strategies: "injectManifest",
     manifest: {
       name: "PWA WORLD CASH",
       short_name: "WC",
@@ -24,7 +24,7 @@ export default defineConfig({
       background_color: "#ffffff",
       icons: [
         {
-          "src": "assets/react.svg",
+          "src": "vite.svg",
           "sizes": "any",
           "purpose":"any"
         }
