@@ -137,4 +137,14 @@ export const getLinkDetails = async (link:string) => {
   };
 
 
+  export const getAccountDetails = async (id:string) => {
+    const response = await url.get<any>(
+      `/api/accounts/${id}`,
+      { auth: credentials }
+    );
+    const result = await response.data;
+    console.log(result);
+    return result;
+  };
+
 

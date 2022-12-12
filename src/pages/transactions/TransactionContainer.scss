@@ -3,11 +3,15 @@
 }
 .transaction-container{
     max-width:900px;
-    width:90%;
+    width:89%;
+   
     padding: 0;
     margin:0 auto;
     background-color: white;
     border-radius: 5px;
+
+  
+   
     .transaction{
         width: 100%;
         height: 3.5rem;
@@ -15,7 +19,13 @@
         grid-template-columns: 1.5fr 4fr 1.5fr;
         
         
-        border-bottom: solid 1px rgb(198, 198, 198);
+        border-bottom: solid 0.5px rgb(212, 212, 212);
+        &:hover{
+           border:solid 1px rgb(167, 167, 167);
+        }
+        &:focus{
+            background-color: rgb(225, 231, 240);
+        }
         .type,.amount,.type{
             margin-left: 20px;
            

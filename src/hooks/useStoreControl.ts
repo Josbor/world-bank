@@ -60,6 +60,7 @@ export const useStoreControl = () => {
         const transactions=await getTransaccions(link,date_From,date_to,account)
         return transactions
     }
+
    
     return {
         banksList,

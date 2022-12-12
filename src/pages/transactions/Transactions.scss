@@ -1,0 +1,47 @@
+.tittle-account{
+    text-align: center;
+    font-size: medium;
+    @media (min-width:480px) {
+        font-size: large;
+        
+    }
+}
+
+.number-account{
+    text-align: center;
+    @media (min-width:480px) {
+        font-size: large;
+        
+    }
+}
+
+.box-amount{
+    p{
+        margin: 10px;
+    }
+    h1{
+        margin:0;
+        margin-bottom: 15px;
+    }
+    @media (min-width:480px) {
+        p{
+            margin-bottom: 20px;
+        }
+        h1{
+            font-size: 50px;
+            margin-bottom:40px ;
+        }
+        
+    }
+}
+
+
+    .bank-logo{
+        img{max-width:200px !important}
+        @media (min-width:480px) {
+            img{
+                max-width:400px !important ;
+            }
+            
+        }
+    }
