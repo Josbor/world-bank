@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import bankSelectionReducer from '../features/bankSelectionSlice'
+import bankListReducer from '../features/bankListSlice'
 
 export const store = configureStore({
   reducer: {
-    
-    bankSelection:bankSelectionReducer
+    banks:bankListReducer
   },
 })
 

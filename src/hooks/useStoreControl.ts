@@ -1,21 +1,25 @@
 import { useState } from "react"
-//import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 import { RootState } from "../app/store"
-//import { addSelectedUser } from '../features/bankSelectionSlice';
+  
 //import { User } from "../models/users.model"
 import { getInstitutions, getAllLinks, getInstitutionsDetails, getAccounts, getOwners, getLinkDetails, getTransaccions } from '../api/data';
+import { addBankList } from "../features/bankListSlice";
 
 
 export const useStoreControl = () => {
     const [banksList,setBanksList]=useState<any>([])
+    const listBanks=useSelector((state:RootState)=>state.banks.value)
     const [linksList,setLinkList]=useState<any>([])
     const [bankDetails,setBankDetails]=useState<any>({})
+    const dispatch=useDispatch()
     
       
     const getListBanks = async () => {
       const listBanks=await getInstitutions();
       setBanksList(listBanks)
+      dispatch(addBankList(listBanks))
       console.log(banksList)
       }
 
@@ -71,7 +75,8 @@ export const useStoreControl = () => {
         getBankDetails,
         getLinksBanks,
         getAccounInfo,
-        getListTransaccions
+        getListTransaccions,
+        listBanks
     }
 
 }

@@ -3,10 +3,15 @@ import { Box } from '@mui/system'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Account.scss'
+import { useStoreControl } from '../../hooks/useStoreControl';
 
 const Account = ({account}:any) => {
   const {name,balance,currency,category,bank_product_id,id,link}=account
-  return (
+  console.log(account)
+  const {listBanks,}=useStoreControl()
+  const bankName=account.institution.name
+  const bankDetails=listBanks.find((bank:any)=>bank.name==bankName)
+    return (
     <div className='account'>
       <div className='type-account'>
         <h3>{category.replace("_"," ")}</h3>
@@ -18,7 +23,7 @@ const Account = ({account}:any) => {
       </div>
       <div className='account-footer'>
 
-        <Link to={`/transactions/${link}/${id}`}>
+        <Link to={`/transactions/${link}/${id}/${bankDetails.id}`}>
           <p>
             VER MOVIMIENTOS
           </p>

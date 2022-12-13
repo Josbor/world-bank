@@ -14,9 +14,9 @@ const RoutesApp = () => {
       <Routes>
           <Route path='/' element={<MyBanks/>}/>
           <Route path='/login/:id' element={<Login/>}/>
-          <Route path='/bankDetails/:id/:idBank' element={<BankDetails/>}/>
+          <Route path='/bankdetails/:id/:idBank' element={<BankDetails/>}/>
           <Route path='/banks' element={<Banks/>}/>
-          <Route path='/transactions/:link/:idAccount' element={<Transactions/>}/>
+          <Route path='/transactions/:link/:idAccount/:idBank' element={<Transactions/>}/>
           <Route path='*' element={ <ErrorPage />}/>
       </Routes>
 

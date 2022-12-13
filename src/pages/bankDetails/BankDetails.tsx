@@ -12,14 +12,14 @@ import AccountContainer from './AccountContainer'
 
 const BankDetails = () => {
     const { id,idBank } = useParams()
-    const {getAccounInfo}=useStoreControl();
+    const {getAccounInfo,getListBanks}=useStoreControl();
     const [accountInfo,setAccountInfo]=useState<any>([]);
     const {setOpen,Loading}=useLoading()
     
     useEffect(() => {
       setOpen(true)
       if (id) getAccounInfo(id,Number(idBank)).then(data=>setAccountInfo(data)).then(()=>setOpen(false))
-    
+      getListBanks()
       
     }, [])
     

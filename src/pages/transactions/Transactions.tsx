@@ -16,8 +16,7 @@ const Transactions = () => {
   const [transactions, setTransactions] = useState([])
   const [account, setAccount] = useState<any>()
   const [bankImage, setBankImage] = useState('')
-  const { link, idAccount } = useParams()
-  console.log({ link, idAccount })
+  const { link, idAccount,idBank } = useParams()
   const { getListTransaccions } = useStoreControl()
   const [dateFromState,dateToState, DateFromPicker] = useDatePicker('Desde','Hasta')
   const {Loading,setOpen}=useLoading()
@@ -49,7 +48,7 @@ console.log(formatToday);
 
   useEffect(() => {
     if (link && idAccount) {
-      getListTransaccions(link, '2022-12-01', '2022-12-11', idAccount).then((data => setTransactions(data)))
+      getListTransaccions(link, formatToday ,formatToday, idAccount).then((data => setTransactions(data)))
       getAccountDetails(idAccount).then((data) => {
         setAccount(data)
         getInstitutions().then(banks => {
@@ -81,7 +80,7 @@ console.log(formatToday);
 
   return (
     <>
-      <Header header={{ path: `/transaction/${link}/${idAccount}`, tittle: `${account ? account.category : ''}`, help: "elija una cuenta para ver sus transacciones" }} />
+      <Header header={{ path: `/bankdetails/${link}/${idBank}`, tittle: `${account ? account.category : ''}`, help: "elija una cuenta para ver sus transacciones" }} />
       <BankLogo className='image-transaction' img={bankImage ? bankImage : ''} />
       <Box className='box-amount' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0 }}>
         <p>SALDO ACTUAL</p>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  } from '../features/bankSelectionSlice';
+import {  } from '../features/bankListSlice';
 
 const useFormatContent = (content:any,exception:any[]) => {
   // const userDetails = Object.keys(content).map(e => {

@@ -9,20 +9,20 @@ export interface bankState {
 
 
 const initialState: bankState = {
-  value:{} 
+  value:[] 
 }
 
-export const bankSelectionSlice = createSlice({
-  name: 'bankselection',
+export const bankListSlice = createSlice({
+  name: 'bankList',
   initialState,
   reducers: {
-    addBankSelection: (state, action: PayloadAction<any>) => {
+    addBankList: (state, action: PayloadAction<any>) => {
       state.value = action.payload
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addBankSelection } = bankSelectionSlice.actions
+export const { addBankList } = bankListSlice.actions
 
-export default bankSelectionSlice.reducer
+export default bankListSlice.reducer
