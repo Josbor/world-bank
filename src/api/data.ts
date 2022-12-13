@@ -1,4 +1,16 @@
 import axios from "axios";
+const bankFilter=[
+  'erebor_mx_retail',
+  'erebor_co_retail',
+  'erebor_br_retail',
+  'gringotts_mx_retail',
+  'gringotts_co_retail',
+  'gringotts_br_retail',
+  'gotham_mx_business',
+  'gotham_co_business',
+  'gotham_br_business',
+  
+]
 
 const credentials = {
   username: "c8747702-c726-4ee6-bebf-f8d0b548b96f",
@@ -9,13 +21,15 @@ const url = axios.create({
   baseURL: "https://sandbox.belvo.com",
 });
 
+
+
 //OBTIENE LAS INSTITUCIONES
 export const getInstitutions = async () => {
   const response = await url.get<any>("/api/institutions/", {
     auth: credentials,
   });
   const data = await response.data.results;
-  const filterData=data.filter((bank:any)=>bank.type=='bank'&&bank.text_logo) 
+  const filterData=data.filter((bank:any)=>bank.type=='bank'&&bank.text_logo&&bankFilter.some((filter)=>filter==bank.name)) 
   return filterData;
 };
 
