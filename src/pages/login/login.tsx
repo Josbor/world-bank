@@ -72,8 +72,8 @@ const login = () => {
   }
 
   useEffect( () => {
-      setOpen(true)
-    if (id) getBankDetails(Number(id)).then(()=>setOpen(false))
+      
+    if (id) getBankDetails(Number(id))
       
   }, [])
 

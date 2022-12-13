@@ -1,14 +1,26 @@
-import React, { useId } from 'react'
+import React, { useId, useState } from 'react'
 import Bank from '../Bank'
 
 import './BanksContainer.scss'
+import { useStoreControl } from '../../hooks/useStoreControl';
+import {useEffect} from 'react';
 
 const BanksContainers = ({list}:any) => {
+
+  
+
+
 
   return (
       <>
       <div className="bank-container">
-            {list.length>0&&list.map((bank:any)=><Bank key={useId()} bank={bank.bankDetails?bank.bankDetails:bank}/>)}
+            {(list&&list.length)&&list.map((bank:any)=>{
+            
+            return(
+
+              <Bank key={useId()} bank={bank.bankDetails?bank.bankDetails:bank}/>
+              )
+            })}
        </div>  
       </>
   )

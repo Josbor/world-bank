@@ -1,9 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import bankListReducer from '../features/bankListSlice'
+import linksReducer from '../features/linksSlice'
+import myBanksReducer from '../features/myBanksSlice'
+
 
 export const store = configureStore({
   reducer: {
-    banks:bankListReducer
+    banks:bankListReducer,
+    links:linksReducer,
+    myBanks:myBanksReducer
   },
 })
 

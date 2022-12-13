@@ -8,11 +8,21 @@
   justify-items: center;
   padding: 0 15px;
   margin-bottom: 2rem;
- 
+  
+  .icon-delete{
+    position:relative;
+    z-index: 1500;
+    top: 35px;
+    left:130px;
+    color:rgb(156, 156, 156);
+    &:hover{
+      color: rgb(201, 46, 46);
+    }
+  }
   .container-country{
      img{position: relative;
       bottom: 25px;
-      left: 130px;
+      left: 10px;
       width: 20px;
      } 
   }
@@ -27,7 +37,7 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.102);
     background-color: #ffff;
     &:hover {
-      background-color: rgba(128, 128, 128, 0.178);
+      background-color: rgba(214, 217, 223, 0.178);
       cursor: pointer;
     }
    
@@ -40,10 +50,18 @@
 
   @media screen and (min-width:480px) {
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    .icon-delete{
+      position:relative;
+      font-size: xx-large;
+      top: 45px;
+      left:205px;
+      
+      
+    }
     .container-country{
       img{position: relative;
        bottom: 30px;
-       left: 200px;
+       left: 115px;
        width: 30px;
       } 
    }
