@@ -9,7 +9,6 @@ const bankFilter=[
   'gotham_mx_business',
   'gotham_co_business',
   'gotham_br_business',
-  
 ]
 
 const credentials = {
